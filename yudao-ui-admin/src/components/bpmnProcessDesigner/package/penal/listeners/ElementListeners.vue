@@ -18,14 +18,14 @@
 
     <!-- 监听器 编辑/创建 部分 -->
     <el-drawer :visible.sync="listenerFormModelVisible" title="执行监听器" size="30%" append-to-body destroy-on-close>
-      <el-form size="mini" :model="listenerForm" label-width="100px" ref="listenerFormRef" @submit.native.prevent>
+      <el-form size="mini" :model="listenerForm" label-width="100px" ref="listenerFormRef" :rules="rules" @submit.native.prevent>
         <el-form-item label="事件类型" prop="event" :rules="{ required: true, trigger: ['blur', 'change'] }">
           <el-select v-model="listenerForm.event">
             <el-option label="start" value="start" />
             <el-option label="end" value="end" />
           </el-select>
         </el-form-item>
-        <el-form-item label="监听器类型" prop="listenerType" :rules="{ required: true, trigger: ['blur', 'change'] }">
+        <el-form-item label="监听器类型" prop="listenerType">
           <el-select v-model="listenerForm.listenerType">
             <el-option v-for="i in Object.keys(listenerTypeObject)" :key="i" :label="listenerTypeObject[i]" :value="i" />
           </el-select>
@@ -35,7 +35,7 @@
           label="Java类"
           prop="class"
           key="listener-class"
-          :rules="{ required: true, message: '必填', trigger: ['blur', 'change'] }"
+    
         >
           <el-input v-model="listenerForm.class" clearable />
         </el-form-item>
@@ -44,7 +44,7 @@
           label="表达式"
           prop="expression"
           key="listener-expression"
-          :rules="{ required: true, trigger: ['blur', 'change'] }"
+        
         >
           <el-input v-model="listenerForm.expression" clearable />
         </el-form-item>
@@ -53,7 +53,6 @@
           label="代理表达式"
           prop="delegateExpression"
           key="listener-delegate"
-          :rules="{ required: true, trigger: ['blur', 'change'] }"
         >
           <el-input v-model="listenerForm.delegateExpression" clearable />
         </el-form-item>
@@ -62,7 +61,6 @@
             label="脚本格式"
             prop="scriptFormat"
             key="listener-script-format"
-            :rules="{ required: true, trigger: ['blur', 'change'], message: '请填写脚本格式' }"
           >
             <el-input v-model="listenerForm.scriptFormat" clearable />
           </el-form-item>
@@ -70,7 +68,6 @@
             label="脚本类型"
             prop="scriptType"
             key="listener-script-type"
-            :rules="{ required: true, trigger: ['blur', 'change'], message: '请选择脚本类型' }"
           >
             <el-select v-model="listenerForm.scriptType">
               <el-option label="内联脚本" value="inlineScript" />
@@ -82,7 +79,6 @@
             label="脚本内容"
             prop="value"
             key="listener-script"
-            :rules="{ required: true, trigger: ['blur', 'change'], message: '请填写脚本内容' }"
           >
             <el-input v-model="listenerForm.value" clearable />
           </el-form-item>
@@ -91,7 +87,6 @@
             label="资源地址"
             prop="resource"
             key="listener-resource"
-            :rules="{ required: true, trigger: ['blur', 'change'], message: '请填写资源地址' }"
           >
             <el-input v-model="listenerForm.resource" clearable />
           </el-form-item>
@@ -184,7 +179,17 @@ export default {
       editingListenerIndex: -1, // 监听器所在下标，-1 为新增
       editingListenerFieldIndex: -1, // 字段所在下标，-1 为新增
       listenerTypeObject: listenerType,
-      fieldTypeObject: fieldType
+      fieldTypeObject: fieldType,
+      rules: {
+        class: [{ required: true, message: '必填', trigger: ['blur', 'change'] }],
+        listenerType: [{ required: true, message: '必填', trigger: ['blur', 'change'] }],
+        expression: [{ required: true, message: '必填', trigger: ['blur', 'change'] }],
+        delegateExpression: [{ required: true, message: '必填', trigger: ['blur', 'change'] }],
+        scriptFormat: [{ required: true, message: '请填写脚本格式', trigger: ['blur', 'change'] }],
+        scriptType: [{ required: true, message: '请选择脚本类型', trigger: ['blur', 'change'] }],
+        value: [{ required: true, message: '请填写脚本内容', trigger: ['blur', 'change'] }],
+        resource: [{ required: true, message: '请填写资源地址', trigger: ['blur', 'change'] }],
+      }
     };
   },
   watch: {
@@ -294,8 +299,11 @@ export default {
   }
 };
 </script>
-<style>
+<style lang="scss">
 .el-drawer {
-  padding: 20px;
+  padding: 0 10px 10px 10px;
+  .el-drawer__header {
+    margin-bottom: 16px;
+  }
 }
 </style>
