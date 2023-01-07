@@ -118,11 +118,11 @@
 
       <!-- 注入西段 编辑/创建 部分 -->
     <el-dialog title="字段配置" :visible.sync="listenerFieldFormModelVisible" width="50%" append-to-body destroy-on-close>
-      <el-form :model="listenerFieldForm" size="mini" label-width="96px" ref="listenerFieldFormRef" style="height: 136px" @submit.native.prevent>
-        <el-form-item label="字段名称：" prop="name" :rules="{ required: true, trigger: ['blur', 'change'] }">
+      <el-form :model="listenerFieldForm" size="mini" label-width="96px" ref="listenerFieldFormRef" :rules="listenerFieldFormRules" style="height: 136px" @submit.native.prevent>
+        <el-form-item label="字段名称：" prop="name" >
           <el-input v-model="listenerFieldForm.name" clearable />
         </el-form-item>
-        <el-form-item label="字段类型：" prop="fieldType" :rules="{ required: true, trigger: ['blur', 'change'] }">
+        <el-form-item label="字段类型：" prop="fieldType" >
           <el-select v-model="listenerFieldForm.fieldType">
             <el-option v-for="i in Object.keys(fieldTypeObject)" :key="i" :label="fieldTypeObject[i]" :value="i" />
           </el-select>
@@ -132,7 +132,6 @@
           label="字段值："
           prop="string"
           key="field-string"
-          :rules="{ required: true, trigger: ['blur', 'change'] }"
         >
           <el-input v-model="listenerFieldForm.string" clearable />
         </el-form-item>
@@ -141,7 +140,6 @@
           label="表达式："
           prop="expression"
           key="field-expression"
-          :rules="{ required: true, trigger: ['blur', 'change'] }"
         >
           <el-input v-model="listenerFieldForm.expression" clearable />
         </el-form-item>
