@@ -105,10 +105,10 @@
         <el-button size="mini" type="primary" @click="openFieldOptionForm(null, -1, 'property')">添加属性</el-button>
       </p>
       <el-table :data="fieldPropertiesList" size="mini" key="property-table" max-height="240" border fit>
-        <el-table-column label="序号" width="50px" type="index" />
-        <el-table-column label="属性编号" prop="id" min-width="100px" show-overflow-tooltip />
-        <el-table-column label="属性值" prop="value" min-width="100px" show-overflow-tooltip />
-        <el-table-column label="操作" width="90px">
+        <el-table-column label="序号" align="center" width="50px" type="index" />
+        <el-table-column label="属性编号" align="center" prop="id" min-width="100px" show-overflow-tooltip />
+        <el-table-column label="属性值" align="center" prop="value" min-width="100px" show-overflow-tooltip />
+        <el-table-column label="操作" align="center" width="90px">
           <template slot-scope="{ row, $index }">
             <el-button size="mini" type="text" @click="openFieldOptionForm(row, $index, 'property')">编辑</el-button>
             <el-divider direction="vertical" />

@@ -1,10 +1,10 @@
 <template>
   <div class="panel-tab__content">
     <el-table :data="elementListenersList" size="mini" border>
-      <el-table-column label="序号" width="50px" type="index" />
-      <el-table-column label="事件类型" min-width="100px" prop="event" />
-      <el-table-column label="监听器类型" min-width="100px" show-overflow-tooltip :formatter="row => listenerTypeObject[row.listenerType]" />
-      <el-table-column label="操作" width="90px">
+      <el-table-column label="序号" align="center" type="index" />
+      <el-table-column label="事件类型" align="center" prop="event" />
+      <el-table-column label="监听器类型" align="center" show-overflow-tooltip :formatter="row => listenerTypeObject[row.listenerType]" />
+      <el-table-column label="操作" align="center" width="90px">
         <template slot-scope="{ row, $index }">
           <el-button size="mini" type="text" @click="openListenerForm(row, $index)">编辑</el-button>
           <el-divider direction="vertical" />
@@ -19,7 +19,7 @@
     <!-- 监听器 编辑/创建 部分 -->
     <el-drawer :visible.sync="listenerFormModelVisible" title="执行监听器" size="30%" append-to-body destroy-on-close>
       <el-form size="mini" :model="listenerForm" label-width="100px" ref="listenerFormRef" :rules="listenerFormRules" @submit.native.prevent>
-        <el-form-item label="事件类型" prop="event" :rules="{ required: true, trigger: ['blur', 'change'] }">
+        <el-form-item label="事件类型" prop="event">
           <el-select v-model="listenerForm.event">
             <el-option label="start" value="start" />
             <el-option label="end" value="end" />
@@ -97,12 +97,12 @@
         <span><i class="el-icon-menu"></i>注入字段：</span>
         <el-button size="mini" type="primary" @click="openListenerFieldForm(null)">添加字段</el-button>
       </p>
-      <el-table :data="fieldsListOfListener" size="mini" max-height="240" border fit style="flex: none">
-        <el-table-column label="序号" width="50px" type="index" />
-        <el-table-column label="字段名称" min-width="100px" prop="name" />
-        <el-table-column label="字段类型" min-width="100px" show-overflow-tooltip :formatter="row => fieldTypeObject[row.fieldType]" />
-        <el-table-column label="字段值/表达式" min-width="100px" show-overflow-tooltip :formatter="row => row.string || row.expression" />
-        <el-table-column label="操作" width="100px">
+      <el-table :data="fieldsListOfListener" border  max-height="240">
+        <el-table-column label="序号" align="center" width="50px" type="index" />
+        <el-table-column label="字段名称" align="center" min-width="100px" prop="name" />
+        <el-table-column label="字段类型" align="center" min-width="100px" show-overflow-tooltip :formatter="row => fieldTypeObject[row.fieldType]" />
+        <el-table-column label="字段值/表达式" align="center" header-align min-width="100px" show-overflow-tooltip :formatter="row => row.string || row.expression" />
+        <el-table-column label="操作" align="center" width="100px">
           <template slot-scope="{ row, $index }">
             <el-button size="mini" type="text" @click="openListenerFieldForm(row, $index)">编辑</el-button>
             <el-divider direction="vertical" />
@@ -304,5 +304,15 @@ export default {
     align-items: center;
     height: 50px;
   }
+  .el-drawer__body {
+    .el-select {
+      width: 100%;
+    }
+  }
+}
+.el-dialog {
+  .el-select {
+      width: 100%;
+    }
 }
 </style>

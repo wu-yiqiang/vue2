@@ -1,10 +1,10 @@
 <template>
   <div class="panel-tab__content">
     <el-table :data="elementPropertyList" size="mini" max-height="240" border fit>
-      <el-table-column label="序号" width="50px" type="index" />
-      <el-table-column label="属性名" prop="name" min-width="100px" show-overflow-tooltip />
-      <el-table-column label="属性值" prop="value" min-width="100px" show-overflow-tooltip />
-      <el-table-column label="操作" width="90px">
+      <el-table-column label="序号" align="center" width="50px" type="index" />
+      <el-table-column label="属性名" align="center" prop="name" min-width="100px" show-overflow-tooltip />
+      <el-table-column label="属性值" align="center" prop="value" min-width="100px" show-overflow-tooltip />
+      <el-table-column label="操作" align="center" width="90px">
         <template slot-scope="{ row, $index }">
           <el-button size="mini" type="text" @click="openAttributesForm(row, $index)">编辑</el-button>
           <el-divider direction="vertical" />
