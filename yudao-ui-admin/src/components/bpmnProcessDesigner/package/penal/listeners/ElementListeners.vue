@@ -17,8 +17,8 @@
     </div>
 
     <!-- 监听器 编辑/创建 部分 -->
-    <el-drawer :visible.sync="listenerFormModelVisible" title="执行监听器" :size="`${width}px`" append-to-body destroy-on-close>
-      <el-form size="mini" :model="listenerForm" label-width="96px" ref="listenerFormRef" @submit.native.prevent>
+    <el-drawer :visible.sync="listenerFormModelVisible" title="执行监听器" size="30%" append-to-body destroy-on-close>
+      <el-form size="mini" :model="listenerForm" label-width="100px" ref="listenerFormRef" @submit.native.prevent>
         <el-form-item label="事件类型" prop="event" :rules="{ required: true, trigger: ['blur', 'change'] }">
           <el-select v-model="listenerForm.event">
             <el-option label="start" value="start" />
@@ -35,7 +35,7 @@
           label="Java类"
           prop="class"
           key="listener-class"
-          :rules="{ required: true, trigger: ['blur', 'change'] }"
+          :rules="{ required: true, message: '必填', trigger: ['blur', 'change'] }"
         >
           <el-input v-model="listenerForm.class" clearable />
         </el-form-item>
