@@ -18,7 +18,7 @@
 
     <!-- 监听器 编辑/创建 部分 -->
     <el-drawer :visible.sync="listenerFormModelVisible" title="执行监听器" size="30%" append-to-body destroy-on-close>
-      <el-form size="mini" :model="listenerForm" label-width="100px" ref="listenerFormRef" :rules="rules" @submit.native.prevent>
+      <el-form size="mini" :model="listenerForm" label-width="100px" ref="listenerFormRef" :rules="listenerFormRules" @submit.native.prevent>
         <el-form-item label="事件类型" prop="event" :rules="{ required: true, trigger: ['blur', 'change'] }">
           <el-select v-model="listenerForm.event">
             <el-option label="start" value="start" />
@@ -115,10 +115,9 @@
         <el-button size="mini" @click="listenerFormModelVisible = false">取 消</el-button>
         <el-button size="mini" type="primary" @click="saveListenerConfig">保 存</el-button>
       </div>
-    </el-drawer>
 
-    <!-- 注入西段 编辑/创建 部分 -->
-    <el-dialog title="字段配置" :visible.sync="listenerFieldFormModelVisible" width="600px" append-to-body destroy-on-close>
+      <!-- 注入西段 编辑/创建 部分 -->
+    <el-dialog title="字段配置" :visible.sync="listenerFieldFormModelVisible" width="50%" append-to-body destroy-on-close>
       <el-form :model="listenerFieldForm" size="mini" label-width="96px" ref="listenerFieldFormRef" style="height: 136px" @submit.native.prevent>
         <el-form-item label="字段名称：" prop="name" :rules="{ required: true, trigger: ['blur', 'change'] }">
           <el-input v-model="listenerFieldForm.name" clearable />
@@ -152,14 +151,17 @@
         <el-button size="mini" type="primary" @click="saveListenerFiled">确 定</el-button>
       </template>
     </el-dialog>
+    </el-drawer>
   </div>
 </template>
 <script>
 import { createListenerObject, updateElementExtensions } from "../../utils";
 import { initListenerType, initListenerForm, listenerType, fieldType } from "./utilSelf";
-
+import {listenerFormRules, listenerFieldFormRules} from './utils'
+import editDialog from "./edit-dialog";
 export default {
   name: "ElementListeners",
+  comments: {editDialog},
   props: {
     id: String,
     type: String
@@ -180,16 +182,8 @@ export default {
       editingListenerFieldIndex: -1, // 字段所在下标，-1 为新增
       listenerTypeObject: listenerType,
       fieldTypeObject: fieldType,
-      rules: {
-        class: [{ required: true, message: '必填', trigger: ['blur', 'change'] }],
-        listenerType: [{ required: true, message: '必填', trigger: ['blur', 'change'] }],
-        expression: [{ required: true, message: '必填', trigger: ['blur', 'change'] }],
-        delegateExpression: [{ required: true, message: '必填', trigger: ['blur', 'change'] }],
-        scriptFormat: [{ required: true, message: '请填写脚本格式', trigger: ['blur', 'change'] }],
-        scriptType: [{ required: true, message: '请选择脚本类型', trigger: ['blur', 'change'] }],
-        value: [{ required: true, message: '请填写脚本内容', trigger: ['blur', 'change'] }],
-        resource: [{ required: true, message: '请填写资源地址', trigger: ['blur', 'change'] }],
-      }
+      listenerFormRules: listenerFormRules,
+      listenerFieldFormRules: listenerFieldFormRules
     };
   },
   watch: {
@@ -303,7 +297,14 @@ export default {
 .el-drawer {
   padding: 0 10px 10px 10px;
   .el-drawer__header {
-    margin-bottom: 16px;
+    padding: 0;
+    margin-bottom: 0 ;
+    line-height: 100%;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    height: 50px;
   }
 }
 </style>
