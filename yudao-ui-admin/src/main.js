@@ -17,7 +17,7 @@ import './tongji' // 百度统计
 import { getDicts } from "@/api/system/dict/data";
 import { getConfigKey } from "@/api/infra/config";
 import { parseTime, resetForm, handleTree, addBeginAndEndTime, divide} from "@/utils/ruoyi";
-import Pagination from "@/components/Pagination";
+// import Pagination from "@/components/Pagination";
 // 自定义表格工具扩展
 import RightToolbar from "@/components/RightToolbar"
 // 代码高亮插件
@@ -41,7 +41,7 @@ Vue.prototype.divide = divide
 // 全局组件挂载
 Vue.component('DictTag', DictTag)
 Vue.component('DocAlert', DocAlert)
-Vue.component('Pagination', Pagination)
+// Vue.component('Pagination', Pagination)
 Vue.component('RightToolbar', RightToolbar)
 // 字典标签组件
 import DictTag from '@/components/DictTag'
