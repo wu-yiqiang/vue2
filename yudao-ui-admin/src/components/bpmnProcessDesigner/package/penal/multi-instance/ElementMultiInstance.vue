@@ -190,3 +190,10 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+.panel-tab__content {
+  .el-select {
+    width: 100%;
+  }
+}
+</style>

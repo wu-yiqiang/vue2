@@ -21,8 +21,8 @@
       <el-form size="mini" :model="listenerForm" label-width="100px" ref="listenerFormRef" :rules="listenerFormRules" @submit.native.prevent>
         <el-form-item label="事件类型" prop="event">
           <el-select v-model="listenerForm.event">
-            <el-option label="start" value="start" />
-            <el-option label="end" value="end" />
+            <el-option label="开始" value="start" />
+            <el-option label="结束" value="end" />
           </el-select>
         </el-form-item>
         <el-form-item label="监听器类型" prop="listenerType">
