@@ -38,18 +38,18 @@ export const constantRoutes = [
     component: Layout,
     hidden: true,
     redirect: 'redirect',
-    children: [{
-      path: 'oa/leave/create',
-      component: (resolve) => require(['@/views/bpm/oa/leave/create'], resolve),
-      name: '发起 OA 请假',
-      meta: { title: '发起 OA 请假', icon: 'form', activeMenu: '/bpm/oa/leave' }
-    }, {
-      path: 'oa/leave/detail',
-      component: (resolve) => require(['@/views/bpm/oa/leave/detail'], resolve),
-      name: '查看 OA 请假',
-      meta: { title: '查看 OA 请假', icon: 'view', activeMenu: '/bpm/oa/leave' }
-    }
-    ]
+    // children: [{
+    //   path: 'oa/leave/create',
+    //   component: (resolve) => require(['@/views/bpm/oa/leave/create'], resolve),
+    //   name: '发起 OA 请假',
+    //   meta: { title: '发起 OA 请假', icon: 'form', activeMenu: '/bpm/oa/leave' }
+    // }, {
+    //   path: 'oa/leave/detail',
+    //   component: (resolve) => require(['@/views/bpm/oa/leave/detail'], resolve),
+    //   name: '查看 OA 请假',
+    //   meta: { title: '查看 OA 请假', icon: 'view', activeMenu: '/bpm/oa/leave' }
+    // }
+    // ]
   }, {
     path: '/bpm',
     component: Layout,
