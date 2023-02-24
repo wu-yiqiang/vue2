@@ -41,7 +41,7 @@
           :type="elementType"
         />
       </el-collapse-item>
-      <el-collapse-item
+      <!-- <el-collapse-item
         v-if="formVisible"
         key="form"
         name="condition"
@@ -50,7 +50,7 @@
           slot="title"
           class="panel-tab__title"
         ><i class="el-icon-s-order" />表单</div>
-      </el-collapse-item>
+      </el-collapse-item> -->
       <el-collapse-item
         v-if="elementType.indexOf('Task') !== -1"
         key="task"
