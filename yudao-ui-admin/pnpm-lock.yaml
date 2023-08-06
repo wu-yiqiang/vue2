@@ -35,6 +35,8 @@ specifiers:
   js-beautify: 1.13.0
   jsencrypt: 3.3.1
   lint-staged: 12.5.0
+  lodash: ^4.17.21
+  lodash-es: ^4.17.21
   min-dash: 3.5.2
   nprogress: 0.2.0
   runjs: 4.4.2
@@ -73,6 +75,8 @@ dependencies:
   highlight.js: 9.18.5
   js-beautify: 1.13.0
   jsencrypt: 3.3.1
+  lodash: 4.17.21
+  lodash-es: 4.17.21
   min-dash: 3.5.2
   nprogress: 0.2.0
   screenfull: 5.0.2
@@ -90,7 +94,7 @@ dependencies:
 devDependencies:
   '@vue/cli-plugin-babel': 4.5.18_p5nmqikmlnw5pblyybm3wskq7y
   '@vue/cli-plugin-eslint': 4.5.18_vbcn7wprkcj6nwahhwi2jdwkzq
-  '@vue/cli-service': 4.5.18_bjfchv5ik6ltwosits2gxkubmu
+  '@vue/cli-service': 4.5.18_pjljsc5oechq7pdjjezj5oeo4q
   '@vue/compiler-sfc': 3.2.47
   '@vue/eslint-config-prettier': 5.1.0_cah7vqahfbobclnn7dnlkehqu4
   babel-eslint: 10.1.0_eslint@7.15.0
@@ -1842,7 +1846,7 @@ packages:
     dependencies:
       '@babel/core': 7.21.0
       '@vue/babel-preset-app': 4.5.19_core-js@3.28.0+vue@2.7.14
-      '@vue/cli-service': 4.5.18_bjfchv5ik6ltwosits2gxkubmu
+      '@vue/cli-service': 4.5.18_pjljsc5oechq7pdjjezj5oeo4q
       '@vue/cli-shared-utils': 4.5.19
       babel-loader: 8.3.0_idmflsbzmivcz6fnnmcaipezqe
       cache-loader: 4.1.0_webpack@4.46.0
@@ -1862,7 +1866,7 @@ packages:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
       eslint: '>= 1.6.0 < 7.0.0'
     dependencies:
-      '@vue/cli-service': 4.5.18_bjfchv5ik6ltwosits2gxkubmu
+      '@vue/cli-service': 4.5.18_pjljsc5oechq7pdjjezj5oeo4q
       '@vue/cli-shared-utils': 4.5.19
       eslint: 7.15.0
       eslint-loader: 2.2.1_zwnwj4c6palyodtmcrsew7hmye
@@ -1881,7 +1885,7 @@ packages:
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
     dependencies:
-      '@vue/cli-service': 4.5.18_bjfchv5ik6ltwosits2gxkubmu
+      '@vue/cli-service': 4.5.18_pjljsc5oechq7pdjjezj5oeo4q
       '@vue/cli-shared-utils': 4.5.19
     dev: true
 
@@ -1890,10 +1894,10 @@ packages:
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
     dependencies:
-      '@vue/cli-service': 4.5.18_bjfchv5ik6ltwosits2gxkubmu
+      '@vue/cli-service': 4.5.18_pjljsc5oechq7pdjjezj5oeo4q
     dev: true
 
-  /@vue/cli-service/4.5.18_bjfchv5ik6ltwosits2gxkubmu:
+  /@vue/cli-service/4.5.18_pjljsc5oechq7pdjjezj5oeo4q:
     resolution: {integrity: sha512-ACRfiyzQNT+3Ko8NdkyvKMsAJ7IziQcM+QvRzfHo11v4YllcQBbRxYsmnffvjaZfNBefQvJ1qX9FI+ggIlxYQA==}
     engines: {node: '>=8'}
     hasBin: true
@@ -1932,7 +1936,7 @@ packages:
       '@vue/cli-plugin-vuex': 4.5.19_@vue+cli-service@4.5.18
       '@vue/cli-shared-utils': 4.5.19
       '@vue/compiler-sfc': 3.2.47
-      '@vue/component-compiler-utils': 3.3.0
+      '@vue/component-compiler-utils': 3.3.0_lodash@4.17.21
       '@vue/preload-webpack-plugin': 1.1.2_kawgdd6iu7jv34d6smtvgjfc2a
       '@vue/web-component-wrapper': 1.3.0
       acorn: 7.4.1
@@ -1971,7 +1975,7 @@ packages:
       terser-webpack-plugin: 1.4.5_webpack@4.46.0
       thread-loader: 2.1.3_webpack@4.46.0
       url-loader: 2.3.0_ke5umg2s3o4akbat3qvdol7cby
-      vue-loader: 15.10.1_qr4ytrdnnuty4n4kl6bkm3rrla
+      vue-loader: 15.10.1_rd2xk3gq7tkelskbnmefmhhh2m
       vue-style-loader: 4.1.3
       webpack: 4.46.0
       webpack-bundle-analyzer: 3.9.0
@@ -2105,10 +2109,10 @@ packages:
       '@vue/shared': 3.2.47
     dev: true
 
-  /@vue/component-compiler-utils/3.3.0:
+  /@vue/component-compiler-utils/3.3.0_lodash@4.17.21:
     resolution: {integrity: sha512-97sfH2mYNU+2PzGrmK2haqffDpVASuib9/w2/noxiFi31Z54hW+q3izKQXXQZSNhtiUpAI36uSuYepeBe4wpHQ==}
     dependencies:
-      consolidate: 0.15.1
+      consolidate: 0.15.1_lodash@4.17.21
       hash-sum: 1.0.2
       lru-cache: 4.1.5
       merge-source-map: 1.1.0
@@ -3791,7 +3795,7 @@ packages:
     resolution: {integrity: sha512-ZMkYO/LkF17QvCPqM0gxw8yUzigAOZOSWSHg91FH6orS7vcEj5dVZTidN2fQ14yBSdg97RqhSNwLUXInd52OTA==}
     dev: true
 
-  /consolidate/0.15.1:
+  /consolidate/0.15.1_lodash@4.17.21:
     resolution: {integrity: sha512-DW46nrsMJgy9kqAbPt5rKaCr7uFtpo4mSUvLHIUbJEjm0vo+aY5QLwBUq3FK4tRnJr/X0Psc0C4jf/h+HtXSMw==}
     engines: {node: '>= 0.10.0'}
     peerDependencies:
@@ -3957,6 +3961,7 @@ packages:
         optional: true
     dependencies:
       bluebird: 3.7.2
+      lodash: 4.17.21
     dev: true
 
   /constants-browserify/1.0.0:
@@ -5825,7 +5830,7 @@ packages:
     resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
     engines: {node: '>= 4.0'}
     os: [darwin]
-    deprecated: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
@@ -7254,6 +7259,10 @@ packages:
     dependencies:
       p-locate: 4.1.0
     dev: true
+
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: false
 
   /lodash.debounce/4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
@@ -10919,7 +10928,7 @@ packages:
     resolution: {integrity: sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==}
     dev: true
 
-  /vue-loader/15.10.1_qr4ytrdnnuty4n4kl6bkm3rrla:
+  /vue-loader/15.10.1_rd2xk3gq7tkelskbnmefmhhh2m:
     resolution: {integrity: sha512-SaPHK1A01VrNthlix6h1hq4uJu7S/z0kdLUb6klubo738NeQoLbS6V9/d8Pv19tU0XdQKju3D1HSKuI8wJ5wMA==}
     peerDependencies:
       '@vue/compiler-sfc': ^3.0.8
@@ -10936,7 +10945,7 @@ packages:
         optional: true
     dependencies:
       '@vue/compiler-sfc': 3.2.47
-      '@vue/component-compiler-utils': 3.3.0
+      '@vue/component-compiler-utils': 3.3.0_lodash@4.17.21
       cache-loader: 4.1.0_webpack@4.46.0
       css-loader: 3.6.0_webpack@4.46.0
       hash-sum: 1.0.2

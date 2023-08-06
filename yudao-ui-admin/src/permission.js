@@ -9,7 +9,7 @@ import { isRelogin } from '@/utils/request'
 NProgress.configure({ showSpinner: false })
 
 // 白名单
-const whiteList = ['/bpm/manager/model/design']
+const whiteList = ['/bpm/manager/model/design', '/demo']
 
 router.beforeEach((to, from, next) => {
   NProgress.start()
